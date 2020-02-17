@@ -46,6 +46,12 @@ public class Main {
 
   public static void main(String[] args) throws Exception {
     SpringApplication.run(Main.class, args);
+    
+  @RequestMapping("/hello")
+    String hello(Map<String, Object> model) {
+    model.put("message", "Welcome to my app!");
+    return "hello";
+}
   }
 
   @RequestMapping("/")
